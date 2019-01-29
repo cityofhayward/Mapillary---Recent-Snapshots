@@ -12,6 +12,7 @@ require([
     map = new Map({
       basemap: "dark-gray"
     });
+
 // max date is today, min date pass to getNewDate function, start with 12 months to subtract from today
     maxDate = new Date().getTime();
     minDate = getNewDate(12);
@@ -33,7 +34,7 @@ require([
                 "source-layer": "mapillary-sequences",
                 "interactive": true,
                 "minzoom": 0,
-                "maxzoom": 14,
+                "maxzoom": 20,
                 "layout": {
                     "line-join": "round",
                     "line-cap":  "round",
@@ -94,7 +95,6 @@ function twelveMonths() {
   document.getElementById("btn2").classList.remove("btn-selected");
   document.getElementById("btn3").classList.remove("btn-selected");
 }
-
 
 //function to generate minimum date for filter after passing in months to subtract from today
 function getNewDate(monthsToSubtract) {
