@@ -34,7 +34,7 @@ require([
                 "source-layer": "mapillary-sequences",
                 "interactive": true,
                 "minzoom": 0,
-                "maxzoom": 20,
+                "maxzoom": 14,
                 "layout": {
                     "line-join": "round",
                     "line-cap":  "round",
@@ -105,3 +105,13 @@ function getNewDate(monthsToSubtract) {
   ).getTime();
   return minDate;
 }
+
+$(window).resize(function() {
+  if ($(window).width() < 500) {
+    $('#responsive-buttons').removeClass('btn-group');
+    $('#responsive-buttons').addClass('btn-group-vertical');
+  } else {
+    $('#responsive-buttons').addClass('btn-group');
+    $('#responsive-buttons').removeClass('btn-group-vertical');
+  }
+});
